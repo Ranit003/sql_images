@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
+import 'package:images_sql/viewimage.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -80,6 +81,11 @@ class _MyAppState extends State<MyApp> {
                 uploadimage();
               });
             }, child: Text("Upload")),
+            Builder(builder:(context) {
+              return ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context)=>viewimage()));
+              }, child:Text("View Data"));
+            })
           ],
         ),
       ),
